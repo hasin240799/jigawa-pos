@@ -1,0 +1,56 @@
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import 'primereact/resources/themes/lara-light-green/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
+import './index.css';
+import AddProduct from './pages/AddProduct';
+import ViewProducts from './pages/ViewProducts';
+import AddPurchase from './pages/AddStock';
+import AddStock from './pages/AddStock';
+import ViewStocks from './pages/ViewStocks';
+import ViewShops from './pages/ViewShops';
+import ProductItem from './pages/ProductItem';
+import Customer from './pages/Customers';
+import UsersForm from './pages/UsersForm';
+import ShopProduct from './pages/ShopProducts';
+import LoginPage from './pages/auth/LoginPage';
+import SalesForm from './pages/SalesForm';
+import UploadNetSal from './pages/UploadNetSal';
+import Repayment from './pages/Repayment';
+
+
+
+function App() {
+    return (
+        <Router>
+            <Layout>
+                <Routes>
+                    {/* <Route path="/" element={<Home />} /> */}
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/product/add" element={<AddProduct/>} />
+                    <Route path="/product/list" element={<ViewProducts/>} />
+                    <Route path="/stock/add" element={<AddStock/>} />
+                    <Route path="/stock/view" element={<ViewStocks/>} />
+                    <Route path="/shops/view" element={<ViewShops/>} />
+                    <Route path="/product/item" element={<ProductItem/>} />
+                    <Route path="/customer/add" element={<Customer/>} />
+                    <Route path="/users/add" element={<UsersForm/>} />
+                    <Route path="/shop/purchase" element={<ShopProduct/>} />
+                    <Route path="/login" element={<LoginPage/>} />
+                    <Route path="/sales/form" element={<SalesForm/>} />
+                    <Route path="/upload/net-salary" element={<UploadNetSal/>} />
+                    <Route path="/upload/repayment" element={<Repayment/>} />
+                    {/* Add more routes as needed */}
+                </Routes>
+            </Layout>
+        </Router>
+    );
+}
+
+export default App;

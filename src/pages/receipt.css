@@ -1,0 +1,32 @@
+/* Regular web page view */
+
+/* Print view */
+@media print {
+    /* Define the page size */
+
+    /* Hide everything except the receipt */
+    body * {
+        visibility: hidden;
+    }
+
+    #receipt-print, #receipt-print * {
+        width: 100%;
+        margin: 0;
+        padding:0;
+        top:0%;
+        height: auto;
+        visibility: visible;
+    }
+
+    #report, #report * {
+        width: 100%;
+        margin: 0;
+        padding:0;
+        top:0%;
+        height: auto;
+        visibility: visible;
+    }
+
+
+}
+

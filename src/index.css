@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* IMPORTANT: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
+@import 'primereact/resources/themes/arya-green/theme.css' layer(primereact);
+
+
+
+
+
+html {
+    font-size: 1rem;
+}
+
+
+.my-input .p-icon-field{
+padding: 50%;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+
+}

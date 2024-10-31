@@ -1,0 +1,26 @@
+{
+    "short_name": "Jigawa  ",
+    "name": "Jigawa Pallitive Shop POS",
+    "description" : "Jigawa State Pallitive Shop Management ",
+    "icons": [
+      {
+        "src": "https://www.jigawapalliative.com.ng/wp-content/uploads/2024/07/e-500-x-199-px-1-e1721594916831.png",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "https://www.jigawapalliative.com.ng/wp-content/uploads/2024/07/e-500-x-199-px-1-e1721594916831.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "https://www.jigawapalliative.com.ng/wp-content/uploads/2024/07/e-500-x-199-px-1-e1721594916831.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/login",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#0ff000"
+  }
