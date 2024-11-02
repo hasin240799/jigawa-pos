@@ -392,7 +392,7 @@ export default function ShopStocks({ auth }) {
             // Create the PDF table for the current shop
             autoTable(pdf, {
                 startY: yPosition , // Start position after the title
-                head: [['ID', 'Products', 'Purchase Price', 'Selling Price', 'Quantity In', 'Quantity Out', 'Stock Balance', 'Current Total Amount', 'Expected Total Amount']],
+                headers: [['ID', 'Products', 'Purchase Price', 'Selling Price', 'Quantity In', 'Quantity Out', 'Stock Balance', 'Current Total Amount', 'Expected Total Amount']],
                 body: dataToExport.map(row => [
                     row.id,
                     row.Products,
@@ -701,7 +701,7 @@ const balanceBody= (rowData)=>{
 <div className="container w-full my-5 mb-5 bg-green-200 rounded-2xl mx-auto px-4 sm:px-6 lg:px-2 py-8">
 
 <Helmet>
-        <title>Shops</title>
+        <title>Shops Stocks</title>
         <meta name="address" content="Learn more about us on this page." />
         <meta name="keywords" content="about, my app, react" />
         <meta property="og:title" content="About Us - My App" />

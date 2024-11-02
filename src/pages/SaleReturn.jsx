@@ -592,7 +592,7 @@ const amountBody = (rowData) => {
 
             {/* Display the total amount */}
         
-            <strong>₦{
+            <strong>{
                 new Intl.NumberFormat('en-NG', {
                     style: 'currency',
                     currency: 'NGN',

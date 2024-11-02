@@ -42,6 +42,7 @@ import ApplyForm from './pages/ApplyForm';
 import CardActivation from './pages/CardActivation';
 import CardRequest from './pages/CardRequest';
 import BulkCard from './pages/BulkCard';
+import CardAssign from './pages/CardAssign';
 
 
 function App() {
@@ -107,6 +108,7 @@ function App() {
             <Route path="/agent-list" element={<ProtectedRoute><AgentList /></ProtectedRoute>} />
             <Route path="/bulk-cards" element={<ProtectedRoute><BulkCard /></ProtectedRoute>} />
             <Route path="/user/change-password" element={<ProtectedRoute><ChangePasswordPage/></ProtectedRoute>} />
+            <Route path="/card-assign" element={<ProtectedRoute><CardAssign/></ProtectedRoute>} />
         </Routes>
         </Layout>
       </Router>
