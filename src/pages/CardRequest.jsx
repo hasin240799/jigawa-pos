@@ -659,7 +659,7 @@ useEffect(() => {
                 form.append('lga', formData?.lga?.name);
                 form.append('address', formData?.address);
                 form.append('ward', formData?.ward?.ward);
-                form.append('contact', formData?.contact == '' | formData.contact); // 
+                form.append('contact', formData?.contact || undefined);
                 form.append('card_id', formData?.card_id);
             
                 setProcessing(true);
@@ -1108,20 +1108,36 @@ useEffect(() => {
                                     {errorMessages?.address && <span className="text-sm text-red-500">{errorMessages?.address}</span>}
                                     </div>
 
+
                                     <>
-                                     <label  className="mb-3 block text-base font-medium font-bold text-[#07074D]">
-                                        Contact
+
+                                    <label htmlFor="contact" className="mb-3 block text-base font-bold text-[#07074D]">
+                                            Contact
                                     </label>
-                                        <input
+                                    <input
+                                            id="psn"
+                                            type="text"
+                                            name="psn"
+                                            placeholder="Phone Number"
+                                            value={formData.contact}
+                                            onChange={(e) => handleInputChange('contact', e.target.value)}
+                                            className="rounded-md py-3 px-5 border w-full border-green-500 bg-white  text-base font-medium font-bold text-[#e40808] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                        />
+                                          {errorMessages?.contact && (
+                                            <span className="text-sm text-red-500">{errorMessages.contact}</span>
+                                        )}
+
+                                     
+                                        {/* <input
                                             id="contact"
                                             type="text"
                                             name="contact"
-                                            value={data?.contact}
-                                            onChange={(e)=>{handleInputChange('contact',e.target.value)}}
+                                            value={data.contact || ''}
+                                            onChange={(e) => handleInputChange('contact', e.target.value)}
                                             placeholder="Phone Number"
-                                            className="rounded-md py-3 px-5 border w-full border-green-500 bg-gray-200 text-base font-medium font-bold text-[#07074D] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                                        />
-                                             {errorMessages?.contact && <span className="text-sm text-red-500">{errorMessages?.contact}</span>}
+                                            className="rounded-md py-3 px-5 border w-full border-green-500 text-base font-medium font-bold text-[#07074D] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                        /> */}
+                                      
                                     </>
 
                                   

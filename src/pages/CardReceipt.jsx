@@ -244,6 +244,7 @@ export default function CardReceipt() {
 
             // Determine the response message using a switch statement
             let message;
+            // console.log(response.data.responseCode);
             switch (response.data.responseCode) {
                 case "00":
                     message = "Approved";
@@ -467,14 +468,16 @@ export default function CardReceipt() {
                 case "98":
                     message = "Exceeds cash limit";
                     break;
+                case null:
+                    message = "PENDING";
+                    break;
                 default:
-                    message = "Unknown response code";
+                    message = response.data.responseMessage;
             }
 
             setProcessingStatus(message)
-
             setResponseCode(response.data.responseCode)
-            setResponseMessage(response.data.responseMessage)
+            setResponseMessage(message)
             
             // window.print();
         
@@ -624,12 +627,12 @@ export default function CardReceipt() {
       };
 
 
-      const statusBody = (processingStatus)=>{       
+      const statusBody = (processingStatus)=>{    
         switch (processingStatus) {
             case "Approved":
                 return(
                     <>
-                      <span className=" font-bold mt-0 font-serif" style={{ fontSize: '15px',fontFamily:'bolder', color:'green' }}>{processingStatus.toUpperCase()}</span><br/>
+                      <span className=" font-bold mt-0 font-serif" style={{ fontSize: '15px',fontFamily:'bolder', color:'green' }}>APPROVED</span><br/>
                     </>
                  )
                 break;
@@ -637,7 +640,7 @@ export default function CardReceipt() {
             default:
                 return(
                     <>
-                      <span className=" font-bold mt-0 font-serif" style={{ fontSize: '15px',fontFamily:'bolder', color:'red' }}>{responseMessage}</span><br/>
+                      <span className=" font-bold mt-0 font-serif" style={{ fontSize: '15px',fontFamily:'bolder', color:'red' }}>{processingStatus}</span><br/>
                     </>
                  )
                 break;
@@ -714,7 +717,7 @@ export default function CardReceipt() {
                 <div  className='px-4 font-mono text-center'>
                      <span className=" font-bold mt-0 font-serif" style={{ fontSize: '15px',fontFamily:'sans-serif', color:'black' }}>CARD PURCHASE</span><br/>
                 <div style={{ fontSize: '12px' }}>***********************</div>
-                     {statusBody(processingStatus)} 
+                     {statusBody(responseMessage)} 
                 <div style={{ fontSize: '12px' }}>************************</div>
                     <span className="mt-3"><b>Processed By:</b><br/>{productData?.sale?.agent?.name}</span><br/>
                 </div>

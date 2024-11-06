@@ -565,7 +565,7 @@ const balanceBody= (rowData)=>{
 <h1 className='text-gray-700 font-bold text-2xl'>Shop Manager Purchase</h1>
 
 <DataTable
-  value={customers}
+  value={customers.stocks}
   scrollable
   rowHover
   tableClassName='p-4'
@@ -584,7 +584,6 @@ const balanceBody= (rowData)=>{
     field="id"
     header="ID"
     className='p-4'
-    sortable
     style={{ minHeight: '12rem' }}
     filter
     filterPlaceholder="Search by ID"
